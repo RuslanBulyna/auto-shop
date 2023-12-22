@@ -13,7 +13,7 @@ const Tab = ({ name, index, activeTabId, onClick }) => {
             onClick={clicked}
             className={`${styles.tabsList_item} ${(activeTabId === index ? styles.activeTab : '')}`}
         >
-            {name}
+            <span>{name}</span>
         </li>
     )
 }

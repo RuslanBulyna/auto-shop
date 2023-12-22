@@ -26,8 +26,13 @@
     background: #F0F0F0;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    writing-mode: sideways-lr;
+}
+
+.tabsList_item > span {
+    writing-mode: vertical-lr;
     text-orientation: mixed;
+    transform-origin: left;
+    transform: translate(115%, 0%) rotate(180deg) ;
 }
 
 .activeTab,
@@ -41,7 +46,7 @@
 }
 
 .tabsContent {
-    min-height: 526px;
+    min-height: 494px;
     height: 100%;
     font-family: sans-serif;
     text-align: left;

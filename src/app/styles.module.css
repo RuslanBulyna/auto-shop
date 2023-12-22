@@ -52,10 +52,10 @@
 
 @media(max-width: 786px) {
     .tabContent1 {
-        padding-bottom: 170px !important;
+        padding-bottom: 150px !important;
     }
     .tabContent1 img {
-        max-width: 500px;
+        max-width: 400px;
         right: -10%;
     }
 }
