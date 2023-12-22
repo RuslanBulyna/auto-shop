@@ -1,0 +1,103 @@
+.tabBody {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.tabBody h3 {
+    color: #18191E;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.tabBody p {
+    margin: 6px 0 0 0;
+    color: #18191E;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tabBody a {
+    margin-top: 16px;
+    color: #18191E;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.tabBody .buttonGroup {
+     margin-top: 21px;
+     display: flex;
+     flex-flow: column nowrap;
+     align-items: flex-start;
+     gap: 16px;
+ }
+
+.tabBody > button {
+    margin-top: 21px;
+}
+
+.tabContent1 {
+    padding-bottom: 176px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.tabContent1 img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+@media(max-width: 786px) {
+    .tabContent1 {
+        padding-bottom: 170px !important;
+    }
+    .tabContent1 img {
+        max-width: 500px;
+        right: -10%;
+    }
+}
+
+@media(max-width: 480px) {
+    .tabContent1 {
+        padding-bottom: 180px !important;
+    }
+    .tabContent1 img {
+        max-width: 450px;
+        right: -30%;
+    }
+}
+
+@media(max-width: 420px) {
+    .tabContent1 {
+        padding-bottom: 180px !important;
+    }
+    .tabContent1 img {
+        max-width: 400px;
+        right: -30%;
+    }
+}
+
+@media(max-width: 360px) {
+    .tabContent1 {
+        padding-bottom: 150px !important;
+    }
+    .tabContent1 img {
+        max-width: 300px;
+        right: -20%;
+    }
+}
+
+.tabContent3 {
+
+}
+
+.tabContent4 {
+
+}
+
+.tabContent5 {
+
+}
