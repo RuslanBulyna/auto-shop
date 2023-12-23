@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
+/* Custom mediaQuery hook */
 export const useMediaQuery = (width) =>
 {
     const [targetReached, setTargetReached] = useState(false)

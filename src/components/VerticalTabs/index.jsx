@@ -3,7 +3,10 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
 
+/* TabList Item */
 const Tab = ({ name, index, activeTabId, onClick }) => {
+
+    /* Item Click Event Handler */
     const clicked = () => {
         onClick(index);
     }
@@ -19,10 +22,10 @@ const Tab = ({ name, index, activeTabId, onClick }) => {
 }
 
 /* Vertical Tabs Block */
-const VerticalTabs = (props) => {
-    const { data } = props;
+const VerticalTabs = ({ data }) => {
     const [ activeTabId, setActiveTabId ] = useState(0);
 
+    /* Tab Click Event Handler */
     const tabClick = (id) => {
         setActiveTabId(id);
     }

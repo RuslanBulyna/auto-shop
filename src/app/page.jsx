@@ -15,6 +15,7 @@ const Homepage = () => {
             <section className={global.section}>
                 <h2>Services</h2>
                 {
+                    /* Displaying components by mediaQuery */
                     !isTabletOrMobile ?
                     (
                         <ServicesBlock/>
