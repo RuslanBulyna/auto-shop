@@ -58,6 +58,16 @@ const Homepage = () => {
                                                 Rhoncus massa nunc ullamcorper et faucibus sit eu lacus cursus.
                                             </p>
                                             <a href="#">Learn More</a>
+                                            <div className={`${styles.buttonGroup}`}>
+                                                <button className={`${global.btn} ${global.btn__primary}`}>Get quote</button>
+                                                <button className={`${global.btn} ${global.btn__secondary}`}>Book now</button>
+                                            </div>
+                                            <Image
+                                                src="/assets/images/mechanical-mobile-image.png"
+                                                width={450}
+                                                height={250}
+                                                alt="Detailing"
+                                            />
                                         </>
                                     ),
                                     styles: `${styles.tabBody} ${styles.tabContent2}`
@@ -73,6 +83,16 @@ const Homepage = () => {
                                                 Rhoncus massa nunc ullamcorper et faucibus sit eu lacus cursus.
                                             </p>
                                             <a href="#">Learn More</a>
+                                            <div className={`${styles.buttonGroup}`}>
+                                                <button className={`${global.btn} ${global.btn__primary}`}>Get quote</button>
+                                                <button className={`${global.btn} ${global.btn__secondary}`}>Book now</button>
+                                            </div>
+                                            <Image
+                                                src="/assets/images/mechanical-mobile-image.png"
+                                                width={450}
+                                                height={250}
+                                                alt="Detailing"
+                                            />
                                         </>
                                     ),
                                     styles: `${styles.tabBody} ${styles.tabContent3}`
@@ -88,7 +108,16 @@ const Homepage = () => {
                                                 Rhoncus massa nunc ullamcorper et faucibus sit eu lacus cursus.
                                             </p>
                                             <a href="#">Learn More</a>
-                                            <button className={`${global.btn} ${global.btn__primary}`}>Book now</button>
+                                            <div className={`${styles.buttonGroup}`}>
+                                                <button className={`${global.btn} ${global.btn__primary}`}>Get quote</button>
+                                                <button className={`${global.btn} ${global.btn__secondary}`}>Book now</button>
+                                            </div>
+                                            <Image
+                                                src="/assets/images/mechanical-mobile-image.png"
+                                                width={450}
+                                                height={250}
+                                                alt="Detailing"
+                                            />
                                         </>
                                     ),
                                     styles: `${styles.tabBody} ${styles.tabContent4}`
@@ -104,7 +133,16 @@ const Homepage = () => {
                                                 Rhoncus massa nunc ullamcorper et faucibus sit eu lacus cursus.
                                             </p>
                                             <a href="#">Learn More</a>
-                                            <button className={`${global.btn} ${global.btn__primary}`}>Book now</button>
+                                            <div className={`${styles.buttonGroup}`}>
+                                                <button className={`${global.btn} ${global.btn__primary}`}>Get quote</button>
+                                                <button className={`${global.btn} ${global.btn__secondary}`}>Book now</button>
+                                            </div>
+                                            <Image
+                                                src="/assets/images/mechanical-mobile-image.png"
+                                                width={450}
+                                                height={250}
+                                                alt="Detailing"
+                                            />
                                         </>
                                     ),
                                     styles: `${styles.tabBody} ${styles.tabContent5}`
