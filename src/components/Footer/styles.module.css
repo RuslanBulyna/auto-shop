@@ -1,0 +1,145 @@
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.footerContainer {
+    padding: 50px 0 32px 0 !important;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1.2fr 4fr;
+    gap: 80px;
+}
+
+.bottom {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contactInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.contactInfo span {
+    color: #787B8A;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.helpfulLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 100px;
+}
+
+.helpfulLinks > div {
+
+}
+
+.helpfulLinks h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.helpfulLinks ul {
+    margin-top: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.helpfulLinks li {
+    margin-top: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.helpfulLinks img {
+    margin-top: 30px;
+}
+
+@media(max-width: 1440px) {
+    .footer {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 960px) {
+    .top,
+    .helpfulLinks {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 40px;
+    }
+    .menuList,
+    .servicesList,
+    .businessInfoList,
+    .location {
+        width: calc(50% - 20px);
+    }
+    .bottom {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .footerContainer {
+        padding: 100px 0 32px 0 !important;
+    }
+    .top,
+    .helpfulLinks {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 40px;
+    }
+    .menuList,
+    .servicesList {
+        width: calc(50% - 20px);
+    }
+    .businessInfoList,
+    .location {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerContainer {
+        padding: 100px 0 20px 0 !important;
+    }
+    .top,
+    .helpfulLinks {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 40px;
+    }
+    .menuList,
+    .servicesList {
+        width: calc(50% - 20px);
+    }
+    .businessInfoList,
+    .location {
+        width: 100%;
+    }
+    .helpfulLinks h4,
+    .helpfulLinks li {
+        font-size: 16px;
+    }
+}

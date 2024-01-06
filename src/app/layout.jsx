@@ -1,4 +1,6 @@
 import styles from '@/styles/global.module.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   icons: [
@@ -30,7 +32,9 @@ const RootLayout = ({ children }) => {
   return (
     <html>
       <body className={styles.body}>
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

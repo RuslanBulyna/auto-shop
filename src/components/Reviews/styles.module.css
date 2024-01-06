@@ -1,0 +1,136 @@
+.review {
+    width: 100%;
+}
+
+.review > div {
+    margin: 0 15px;
+    position: relative;
+}
+
+.reviewBackground {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    position: absolute;
+    background: rgba(73, 77, 91, 0.40);
+    box-shadow: 1px 2px 8px 0px rgba(85, 89, 105, 0.10);
+    backdrop-filter: blur(5.5px);
+    clip-path: polygon( 77.22% 0.188%,7.473% 0.188%,7.473% 0.188%,6.295% 0.265%,5.177% 0.489%,4.135% 0.847%,3.183% 1.328%,2.337% 1.918%,1.611% 2.606%,1.02% 3.38%,0.58% 4.227%,0.305% 5.136%,0.209% 6.094%,0.209% 94.086%,0.209% 94.086%,0.305% 95.044%,0.58% 95.952%,1.02% 96.8%,1.611% 97.574%,2.337% 98.262%,3.183% 98.852%,4.135% 99.332%,5.177% 99.69%,6.295% 99.914%,7.473% 99.991%,92.703% 99.991%,92.703% 99.991%,93.882% 99.914%,94.999% 99.69%,96.042% 99.332%,96.993% 98.852%,97.84% 98.262%,98.566% 97.574%,99.157% 96.8%,99.597% 95.952%,99.872% 95.044%,99.967% 94.086%,99.967% 17.884%,99.967% 17.884%,99.943% 17.396%,99.869% 16.916%,99.748% 16.444%,99.581% 15.983%,99.368% 15.535%,99.111% 15.103%,98.812% 14.688%,98.471% 14.294%,98.09% 13.922%,97.669% 13.574%,82.186% 1.784%,82.186% 1.784%,81.77% 1.49%,81.33% 1.224%,80.868% 0.987%,80.388% 0.779%,79.89% 0.602%,79.377% 0.455%,78.852% 0.339%,78.316% 0.256%,77.771% 0.205%,77.22% 0.188% );
+    z-index: -1;
+}
+
+.review > div > div {
+    padding: 50px;
+}
+
+.review:hover {
+    cursor: pointer;
+}
+
+.review:hover .reviewBackground {
+    background: #FFF;
+}
+
+.rating {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.ratingStars {
+    margin: 0 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.review:hover .rating {
+    color: #18191E;
+}
+
+.review hr {
+    margin: 10px 0 50px 0;
+    color: #E1E0E5;
+}
+
+.review:hover .hr {
+    color: #33343F;
+}
+
+.text {
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.review:hover .text {
+    color: #555969;
+}
+
+.info {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+.reviewSource {
+    font-size: 14px;
+    font-weight: 400;
+    color: #787B8A;
+}
+
+.review:hover .reviewSource {
+    color: #555969;
+}
+
+.userName {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.review:hover .userName {
+    color: #18191E;
+}
+
+.userRole {
+    font-size: 16px;
+    font-weight: 400;
+    color: #E1E0E5;
+}
+
+.review:hover .userRole {
+    color: #555969;
+}
+
+@media (max-width: 480px) {
+    .review > div > div {
+        padding: 40px 20px;
+    }
+    .rating {
+        font-size: 24px;
+    }
+    .rating svg {
+        width: 16px;
+        height: 16px;
+    }
+    .review hr {
+        margin: 20px 0;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .info {
+        margin-top: 20px;
+    }
+    .userRole {
+        font-size: 14px;
+    }
+}

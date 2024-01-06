@@ -1,0 +1,72 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.headerContainer {
+    padding: 44px 0 44px 0 !important;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.headerContainer > div button {
+    padding: 9px 53px;
+}
+
+.burgerBtn {
+    padding: 0 !important;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    background: none;
+    border: 0;
+}
+
+.burgerBtn span {
+    width: 50px;
+    height: 2px;
+    background: #FFF;
+}
+
+.cartBtn {
+    padding: 0 !important;
+    position: relative;
+    background: none;
+    border: 0;
+}
+
+.cartBtn span {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -5px;
+    background: #FF861D;
+    border-radius: 50%;
+}
+
+@media(max-width: 1440px) {
+    .header {
+        width: initial;
+        padding: 0 16px;
+    }
+}
+
+@media(max-width: 480px) {
+    .headerContainer {
+        padding: 22px 0 !important;
+    }
+    .burgerBtn span {
+        width: 44px;
+    }
+}
