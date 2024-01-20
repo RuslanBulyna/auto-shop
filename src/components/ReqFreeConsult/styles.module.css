@@ -137,8 +137,12 @@
     .fieldGroup .input input {
         max-width: 100%;
     }
-    .fieldGroup .select > div > div {
-        max-width: calc(100% - 44px);
+    .fieldGroup .select > div > div:first-child {
+        max-width: calc(100% - 44px) !important;
+        width: 100%;
+    }
+    .fieldGroup .select > div > div:last-child {
+        max-width: 100%;
         width: 100%;
     }
     .form > button {

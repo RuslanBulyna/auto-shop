@@ -458,6 +458,7 @@ const BookingForm = () => {
                         </div>
                         <button className={`${global.btn} ${global.btn__secondary}`} disabled={true}>Confirm request</button>
                     </div>
+                    <div className={styles.background}></div>
                 </form>
             </div>
         </div>

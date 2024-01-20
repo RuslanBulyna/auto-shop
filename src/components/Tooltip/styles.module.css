@@ -27,3 +27,20 @@
     visibility: visible;
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    .tooltipText {
+        width: 200px;
+        left: -110px;
+        border-bottom-left-radius: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tooltipText {
+        width: 150px;
+        left: -190px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 0;
+    }
+}

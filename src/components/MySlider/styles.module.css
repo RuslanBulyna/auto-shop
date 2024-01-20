@@ -24,7 +24,7 @@
     font-size: 0;
     outline: none;
     border: none;
-    border-radius: 50%;
+    border-radius: 0.5px;
 }
 
 .dots button:hover {
@@ -37,7 +37,7 @@
 
 @media (max-width: 480px) {
     .dots {
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .dots button {
         width: 22px !important;

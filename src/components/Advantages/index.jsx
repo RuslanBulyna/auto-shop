@@ -51,6 +51,7 @@ const Advantages = () => {
                     All shops are trusted, highly rated, and loved by Chicagoans.
                     Our concierges go through rigorous training and your car is insured while we service it.
                 </span>
+                <div className={styles.background}></div>
             </>
         },
         {
@@ -67,6 +68,7 @@ const Advantages = () => {
                     Gone are the days of long lines and spending hours at service centers.
                     Don’t juggle your schedule around maintenance appointments.
                 </span>
+                <div className={styles.background}></div>
             </>
         },
         {
@@ -83,6 +85,7 @@ const Advantages = () => {
                     We give you an expert advice and keep you updated on the price and status.
                     We ask for approval on all repairs needed and you only pay when the service is completed.
                 </span>
+                <div className={styles.background}></div>
             </>
         }
     ];
