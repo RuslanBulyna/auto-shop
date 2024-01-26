@@ -108,7 +108,6 @@ const BookingPortalPage = () => {
                                     }
                                 </MySlider>
                             </div>
-
                     }
                 </div>
             </section>

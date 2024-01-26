@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
     color: white-color;
     background: linear-gradient(180deg, #16161B 0.3%, #72758E 234.08%);
     font-family: sans-serif;

@@ -76,8 +76,8 @@
 }
 
 @media(max-width: 1440px) {
-    .footer {
-        padding: 0 16px;
+    .footerContainer {
+        padding: 50px 16px !important;
     }
 }
 

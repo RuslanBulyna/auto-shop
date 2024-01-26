@@ -1,0 +1,335 @@
+.heroBlock {
+    margin-top: 100px;
+}
+
+.heroBlock form {
+    width: 100%;
+    margin-top: 50px;
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.heroBlock .formBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(73, 77, 91, 0.20);
+    filter: drop-shadow(1px 2px 8px rgba(85, 89, 105, 0.10));
+    backdrop-filter: blur(5.5px);
+    border-radius: 30px;
+    z-index: -9;
+}
+
+.select {
+    max-width: 260px;
+}
+
+.heroBlock form button {
+    max-width: 200px;
+    width: 100%;
+}
+
+.heroBlock .bgElement1 {
+
+}
+
+.heroBlock .bgElement2 {
+
+}
+
+.categorySection {
+    margin-top: 100px;
+}
+
+.modalHeading {
+    margin-top: 25px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.modalHeading h2,
+.modalAdditionalServices h2 {
+    margin: 0;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.modalHeading h2 {
+    max-width: 50%;
+}
+
+.modalHeading h2:first-child {
+    margin-right: 50px;
+}
+
+.modalServicePrice {
+    margin-left: 50px;
+}
+
+.modalServiceInfo {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+}
+
+.modalImageSlider {
+    max-width: 450px;
+}
+
+.modalImageSlider > div {
+    margin-top: 0;
+}
+
+.modalImageSlider :global(.slick-slide) > div {
+    margin: 0 15px;
+}
+
+.modalImageSlider img {
+    max-width: 450px;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.modalImageSlider ul {
+    margin: 25px 0 0 0;
+}
+
+.modalTabsWrapper {
+    width: 100%;
+}
+
+.modalTabs {
+    margin-top: 0;
+}
+
+.modalTabs > div:last-child {
+    min-height: 303px;
+    background: #494D5B;
+}
+
+.modalTabs li {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #787B8A;
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
+    background: #555969;
+    text-transform: uppercase;
+}
+
+.modalTabs li:global(.active-tab),
+.modalTabs li:global(.tabs-list_item:hover),
+.modalTabs li:global(.tabs-list_item:active),
+.modalTabs li:global(.tabs-list_item:focus) {
+    cursor: pointer;
+    color: #FFF;
+    background: #494D5B;
+    outline: 0px;
+}
+
+.tabContent {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.tabContentTop {
+    margin-top: 20px;
+}
+
+.tabDescription {
+    font-size: 16px;
+    font-weight: 300;
+    color: #FFF;
+}
+
+.tabCertificates {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+}
+
+.tabContentBottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modalAdditionalServices {
+    margin-top: 50px;
+}
+
+.modalAdditionalServicesList {
+    margin-top: 50px;
+    display: flex;
+    gap: 60px;
+}
+
+.modalAdditionalServicesSlider {
+    max-width: 100%;
+}
+
+.modalAdditionalService {
+    max-width: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.modalAdditionalService img {
+
+}
+
+.modalAdditionalService h4 {
+    margin: 30px 0 0 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.modalAdditionalService p {
+    margin: 20px 0 0 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    color: #FFF;
+}
+
+.modalAdditionalService button {
+    margin-top: 40px;
+}
+
+.loader {
+    padding: 50px 0;
+}
+
+@media (max-width: 1300px) {
+    .modalHeading h2 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .heroBlock form {
+        width: initial;
+        padding: 50px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .heroBlock form {
+        width: initial;
+        padding: 50px;
+    }
+    .modalServiceInfo {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .modalHeading h2,
+    .modalAdditionalServices h2 {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 620px) and (max-width: 900px) {
+    .heroBlock form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .select,
+    .heroBlock form button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 620px) {
+    .heroBlock form {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .select,
+    .heroBlock form button {
+        max-width: inherit;
+    }
+
+    .modalHeading {
+        flex-flow: column nowrap;
+    }
+
+    .modalImageSlider,
+    .modalImageSlider img {
+        max-width: 100%;
+    }
+
+    .modalAdditionalServicesList {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroBlock {
+        margin-top: 50px;
+    }
+
+    .heroBlock h1 {
+        font-size: 36px;
+    }
+
+    .heroBlock form {
+        padding: 40px 15px;
+        gap: 20px;
+    }
+
+    .categorySection {
+        margin-top: 70px;
+    }
+
+    .modalImageSlider ul {
+        margin: 5px 0 0 0;
+    }
+
+    .modalHeading h2,
+    .modalAdditionalServices h2 {
+        font-size: 36px;
+    }
+
+    .modalTabs li {
+        padding: 19px 22px;
+        font-size: 9px;
+    }
+
+    .tabContentBottom {
+        justify-content: center;
+    }
+
+    .tabContentBottom button {
+        font-size: 18px;
+    }
+}
+
