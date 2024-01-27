@@ -17,7 +17,6 @@ const CloseIcon = () => {
 const Modal = (props) => {
     const { isOpen, setIsOpen, children } = props;
     const [ pageScrollPosY, setPageScrollPosY ] = useState(0);
-    console.log("pageScrollPosY", pageScrollPosY, window.scrollY)
 
     useEffect(() => {
         setPageScrollPosY(window.scrollY);
@@ -34,7 +33,7 @@ const Modal = (props) => {
         <>
             {
                 isOpen &&
-                    <div className={`${styles.modalWrapper}`} styles={`top: ${pageScrollPosY}px`}>
+                    <div className={`${styles.modalWrapper}`}>
                         <div className={`${styles.modal}`}>
                             <dialog className={`${styles.modalDialog}`}>
                                 <button onClick={() => setIsOpen(!isOpen)} type="button" className={`${styles.closeBtn}`}>
@@ -44,8 +43,8 @@ const Modal = (props) => {
                                     { children }
                                 </div>
                             </dialog>
-                            <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
                         </div>
+                        <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
                     </div>
             }
         </>
