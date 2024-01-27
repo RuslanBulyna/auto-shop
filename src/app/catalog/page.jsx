@@ -169,8 +169,22 @@ const CatalogPage = () => {
                                 <div className={styles.formBg}></div>
                             </div>
                         </form>
-                        <div className={styles.bgElement1}></div>
-                        <div className={styles.bgElement2}></div>
+                        <div className={styles.bgElement1}>
+                            <Image
+                                src="/assets/images/catalog-vector-1.svg"
+                                width={158}
+                                height={310}
+                                alt="Background Image"
+                            />
+                        </div>
+                        <div className={styles.bgElement2}>
+                            <Image
+                                src="/assets/images/catalog-vector-2.svg"
+                                width={158}
+                                height={310}
+                                alt="Background Image"
+                            />
+                        </div>
                     </div>
                 </section>
                 { loading ? (
@@ -360,16 +374,20 @@ const CatalogPage = () => {
                                         getService?.relatedServices?.map(service => {
                                             return (
                                                 <div className={`${styles.modalAdditionalService}`}>
-                                                    {
-                                                        service?.relatedService?.icon && <Image
-                                                            src={service?.relatedService?.icon}
-                                                            width={60}
-                                                            height={60}
-                                                            alt="Info"
-                                                        />
-                                                    }
-                                                    <h4>{service?.relatedService?.name}</h4>
-                                                    <p>{service?.relatedService?.description}</p>
+                                                    <div className={`${styles.modalAdditionalServiceTop}`}>
+                                                        <div className={`${styles.modalAdditionalServiceImg}`}>
+                                                            {
+                                                                service?.relatedService?.icon && <Image
+                                                                    src={service?.relatedService?.icon}
+                                                                    width={60}
+                                                                    height={60}
+                                                                    alt="Info"
+                                                                />
+                                                            }
+                                                        </div>
+                                                        <h4>{service?.relatedService?.name}</h4>
+                                                        <p>{service?.relatedService?.description}</p>
+                                                    </div>
                                                     <button className={`${global.btn} ${global.btn__secondary}`}>Add to cart</button>
                                                 </div>
                                             )
