@@ -27,6 +27,15 @@
     padding: 75px 0 150px 0;
 }
 
+.reviewsBlock :global(.slick-slide),
+.reviewsBlock :global(.slick-slide) > div {
+    height: 571px;
+}
+
+.reviewsBlock :global(.review) {
+    height: 100%;
+}
+
 .advantagesBlock > div,
 .reviewsBlock > div {
     position: relative;

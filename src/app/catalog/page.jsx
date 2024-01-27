@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { usePathname } from 'next/navigation'
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { usePathname } from 'next/navigation';
 import { useGetCategoriesWithServices } from "@/hooks/categories/useGetCategoriesWithServices";
 import { useGetServiceById } from "@/hooks/services/useGetServiceById";
 import MySlider from "@/components/MySlider";
@@ -18,7 +17,10 @@ const serviceSettings = {
     arrows: false,
     slidesToShow: 3,
     slidesToScroll: 3,
+    adaptiveHeight: false,
+    infinite: true,
     responsive: [
+
         {
             breakpoint: 1200,
             settings: {
@@ -69,18 +71,13 @@ const CatalogPage = () => {
     const [ year, setYear ] = useState({});
     const [ make, setMake ] = useState({});
     const [ model, setModel ] = useState({});
-    const [ isModalAvailable, setIsModalAvailable ] = useState(true);
+    const [ isModalAvailable, setIsModalAvailable ] = useState(false);
+    const [ isFormError, setIsFormError ] = useState(false);
     const [ isOpen, setIsOpen ] = useState(false);
     const [ serviceId, setServiceId ] = useState(1);
 
     const { categories, loading } = useGetCategoriesWithServices(0);
     const { getService, getServiceLoading } = useGetServiceById(serviceId);
-
-    //console.log("getService", getService);
-
-    const openModal = () => {
-        setIsOpen(!isOpen);
-    }
 
     const scrollToForm = (e) => {
         e.preventDefault();
@@ -103,9 +100,11 @@ const CatalogPage = () => {
     const checkAutoForm = () => {
         if((Object.keys(year).length !== 0) && (Object.keys(make).length !== 0) && (Object.keys(model).length !== 0)) {
             setIsModalAvailable(true);
+            setIsFormError(false);
             console.log("Modal is available", isModalAvailable)
         } else {
             setIsModalAvailable(false);
+            setIsFormError(true);
             console.log("Modal is not available")
         }
     }
@@ -116,19 +115,17 @@ const CatalogPage = () => {
 
     const showServiceModal = (e) => {
         const serviceId = e.target.getAttribute('data-service-id');
-        console.log("SERVICE ID", serviceId)
+        checkAutoForm();
         if(isModalAvailable && serviceId) {
-            setIsOpen(!isOpen);
-            getServiceById(serviceId)
+            getServiceById(serviceId);
+            setIsOpen(true);
         } else {
             scrollToForm(e);
         }
     }
 
-    const onSubmit = (event) => {
+    const onSubmit = (e) => {
         checkAutoForm();
-
-        console.log("SUBMIT", isModalAvailable)
     }
 
     // console.log("SERVICE", getService, serviceId);
@@ -138,30 +135,43 @@ const CatalogPage = () => {
             <main className={global.main}>
                 <section id="auto-filter" className={`${global.section} ${styles.heroBlock}`}>
                     <h1>SELECT A SERVICE FOR YOUR CAR</h1>
-                    <form action={onSubmit}>
-                        <Select
-                            className={styles.select}
-                            placeHolder="Year"
-                            options={yearData}
-                            onChange={setYear}
-                        />
-                        <Select
-                            className={styles.select}
-                            placeHolder="Make"
-                            options={makeData}
-                            onChange={setMake}
-                        />
-                        <Select
-                            className={styles.select}
-                            placeHolder="Model"
-                            options={modelData}
-                            onChange={setModel}
-                        />
-                        <button className={`${global.btn} ${global.btn__primary}`}>Select</button>
-                        <div className={styles.formBg}></div>
-                    </form>
-                    <div className={styles.bgElement1}></div>
-                    <div className={styles.bgElement2}></div>
+                    <div>
+                        <form action={onSubmit}>
+                            <div className={`${styles.formContent}`}>
+                                <div className={`${styles.formContentTop}`}>
+                                    <Select
+                                        className={styles.select}
+                                        placeHolder="Year"
+                                        options={yearData}
+                                        onChange={setYear}
+                                    />
+                                    <Select
+                                        className={styles.select}
+                                        placeHolder="Make"
+                                        options={makeData}
+                                        onChange={setMake}
+                                    />
+                                    <Select
+                                        className={styles.select}
+                                        placeHolder="Model"
+                                        options={modelData}
+                                        onChange={setModel}
+                                    />
+                                    <button type="submit" className={`${global.btn} ${global.btn__primary}`}>Select</button>
+                                </div>
+                                {
+                                    isFormError && (
+                                        <p className={`${styles.formError}`}>
+                                            Please enter your car make/model/year to receive most accurate pricing
+                                        </p>
+                                    )
+                                }
+                                <div className={styles.formBg}></div>
+                            </div>
+                        </form>
+                        <div className={styles.bgElement1}></div>
+                        <div className={styles.bgElement2}></div>
+                    </div>
                 </section>
                 { loading ? (
                     <div className={`${styles.loader}`}>Loading...</div>
@@ -205,7 +215,7 @@ const CatalogPage = () => {
                 )}
             </main>
             <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-                {   loading ? (
+                {   getServiceLoading ? (
                     <div className={`${styles.loader}`}>Loading...</div>
                 ) : (
                     <>
@@ -347,21 +357,23 @@ const CatalogPage = () => {
                             <div className={`${styles.modalAdditionalServicesSlider}`}>
                                 <MySlider settings={serviceSettings}>
                                     {
-                                        getService?.relatedServices?.map(service => (
-                                            <div className={`${styles.modalAdditionalService}`}>
-                                                {
-                                                    service?.icon && <Image
-                                                        src={service.icon}
-                                                        width={60}
-                                                        height={60}
-                                                        alt="Info"
-                                                    />
-                                                }
-                                                <h4>{service?.name}</h4>
-                                                <p>{service?.description}</p>
-                                                <button className={`${global.btn} ${global.btn__secondary}`}>Add to cart</button>
-                                            </div>
-                                        ))
+                                        getService?.relatedServices?.map(service => {
+                                            return (
+                                                <div className={`${styles.modalAdditionalService}`}>
+                                                    {
+                                                        service?.relatedService?.icon && <Image
+                                                            src={service?.relatedService?.icon}
+                                                            width={60}
+                                                            height={60}
+                                                            alt="Info"
+                                                        />
+                                                    }
+                                                    <h4>{service?.relatedService?.name}</h4>
+                                                    <p>{service?.relatedService?.description}</p>
+                                                    <button className={`${global.btn} ${global.btn__secondary}`}>Add to cart</button>
+                                                </div>
+                                            )
+                                        })
                                     }
                                 </MySlider>
                             </div>

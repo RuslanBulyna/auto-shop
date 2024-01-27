@@ -1,10 +1,8 @@
 'use client'
 
-import { useSearchParams, usePathname } from "next/navigation";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import global from '@/styles/global.module.css';
 import styles from './styles.module.css';
 
 const CloseIcon = () => {
@@ -18,21 +16,36 @@ const CloseIcon = () => {
 /* Custom Slick Slider */
 const Modal = (props) => {
     const { isOpen, setIsOpen, children } = props;
-    console.log(isOpen)
+    const [ pageScrollPosY, setPageScrollPosY ] = useState(0);
+    console.log("pageScrollPosY", pageScrollPosY, window.scrollY)
+
+    useEffect(() => {
+        setPageScrollPosY(window.scrollY);
+        if(isOpen === false) {
+            document.body.setAttribute('style', `overflow-y: scroll`);
+            console.log('document.body 1', document.body)
+        } else {
+            document.body.setAttribute('style', `overflow-y: hidden`);
+            console.log('document.body 2', document.body)
+        }
+    }, [isOpen]);
+
     return (
         <>
             {
                 isOpen &&
-                    <div className={`${styles.modalWrapper}`}>
-                        <dialog className={`${styles.modal}`}>
-                            <button onClick={() => setIsOpen(!isOpen)} type="button" className={`${styles.closeBtn}`}>
-                                <CloseIcon/>
-                            </button>
-                            <div className={`${styles.modalContent}`}>
-                                { children }
-                            </div>
-                        </dialog>
-                        <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
+                    <div className={`${styles.modalWrapper}`} styles={`top: ${pageScrollPosY}px`}>
+                        <div className={`${styles.modal}`}>
+                            <dialog className={`${styles.modalDialog}`}>
+                                <button onClick={() => setIsOpen(!isOpen)} type="button" className={`${styles.closeBtn}`}>
+                                    <CloseIcon/>
+                                </button>
+                                <div className={`${styles.modalContent}`}>
+                                    { children }
+                                </div>
+                            </dialog>
+                            <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
+                        </div>
                     </div>
             }
         </>

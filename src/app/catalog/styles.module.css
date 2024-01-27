@@ -5,8 +5,15 @@
 .heroBlock form {
     width: 100%;
     margin-top: 50px;
+}
+
+.formContent {
+    width: 100%;
     padding: 50px 0;
     position: relative;
+}
+
+.formContentTop {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -14,10 +21,18 @@
     gap: 30px;
 }
 
+.formError {
+    margin-bottom: 0;
+    color: #EA0000;
+    font-size: 14px;
+    text-align: center;
+}
+
 .heroBlock .formBg {
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
     background: rgba(73, 77, 91, 0.20);
     filter: drop-shadow(1px 2px 8px rgba(85, 89, 105, 0.10));
     backdrop-filter: blur(5.5px);
@@ -46,6 +61,15 @@
     margin-top: 100px;
 }
 
+.servicesSlider :global(.slick-slide),
+.servicesSlider :global(.slick-slide) > div {
+    height: 275px;
+}
+
+.servicesSlider :global(.service) {
+    height: 100%;
+}
+
 .modalHeading {
     margin-top: 25px;
     display: flex;
@@ -61,10 +85,6 @@
     line-height: normal;
     text-transform: uppercase;
     color: #FFF;
-}
-
-.modalHeading h2 {
-    max-width: 50%;
 }
 
 .modalHeading h2:first-child {
@@ -197,17 +217,18 @@
 }
 
 .modalAdditionalService h4 {
-    margin: 30px 0 0 0;
+    margin: 10px 20px 0 20px;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
     color: #FFF;
+    text-align: center;
 }
 
 .modalAdditionalService p {
-    margin: 20px 0 0 0;
+    margin: 20px 20px 0 20px;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -222,26 +243,21 @@
 
 .loader {
     padding: 50px 0;
-}
-
-@media (max-width: 1300px) {
-    .modalHeading h2 {
-        max-width: 100%;
-    }
+    color: #FFF;
+    text-align: center;
 }
 
 @media (max-width: 1200px) {
     .heroBlock form {
         width: initial;
-        padding: 50px;
+    }
+    .formContentTop,
+    .formError {
+        padding: 0 50px;
     }
 }
 
 @media (max-width: 1050px) {
-    .heroBlock form {
-        width: initial;
-        padding: 50px;
-    }
     .modalServiceInfo {
         flex-flow: column nowrap;
         align-items: center;
@@ -256,26 +272,26 @@
 }
 
 @media (min-width: 620px) and (max-width: 900px) {
-    .heroBlock form {
+    .heroBlock .formContentTop {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
     .select,
-    .heroBlock form button {
-        max-width: 100%;
+    .formContentTop button {
+        max-width: 100% !important;
     }
 }
 
 @media (max-width: 620px) {
-    .heroBlock form {
+    .heroBlock .formContentTop {
         display: flex;
         flex-flow: column nowrap;
     }
 
     .select,
-    .heroBlock form button {
-        max-width: inherit;
+    .formContentTop button {
+        max-width: inherit !important;
     }
 
     .modalHeading {
@@ -302,13 +318,18 @@
         font-size: 36px;
     }
 
-    .heroBlock form {
-        padding: 40px 15px;
+    .heroBlock .formContent {
+        padding: 40px 0;
+        gap: 20px;
+    }
+
+    .heroBlock .formContentTop {
+        padding: 0 15px;
         gap: 20px;
     }
 
     .categorySection {
-        margin-top: 70px;
+        margin-top: 30px;
     }
 
     .modalImageSlider ul {
@@ -331,6 +352,10 @@
 
     .tabContentBottom button {
         font-size: 18px;
+    }
+
+    .modalAdditionalService p {
+        padding: 0 16px;
     }
 }
 
