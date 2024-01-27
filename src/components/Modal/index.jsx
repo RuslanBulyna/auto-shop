@@ -43,8 +43,8 @@ const Modal = (props) => {
                                     { children }
                                 </div>
                             </dialog>
+                            <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
                         </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className={`${styles.modalBg}`}></div>
                     </div>
             }
         </>
